@@ -2,9 +2,10 @@
     "news": [
         {
             "id": 1,
-            "title": "This is the title of a news",
-            "subtitle": "This is the subtitle",
-            "authorName": "Andrea",
+            "category": "Sport",
+            "title": "Novak Djokovic to face his rival Rafael Nadal in the final!",
+            "author_name": "Andrea Cipriani",
+            "image_name": "djokovic.jpg",
             "style": "card_light",
             "link": {
                 "app": "newsfeed://news:1",
@@ -13,12 +14,49 @@
         },
         {
             "id": 2,
-            "title": "This is the title of the news",
-            "subtitle": "This is the subtitle",
-            "authorName": "Germano",
-            "style": "card_dark",
+            "category": "Food",
+            "title": "Tourist banned from Italy for eating pizza with pineapple",
+            "author_name": "Andrea Cipriani",
+            "image_name": "pizza.jpg",
+            "style": "card_light",
             "link": {
                 "app": "newsfeed://news:2",
+                "web": "www.google.com"
+            }
+        },
+        {
+            "id": 3,
+            "category": "Sport",
+            "title": "Nadal-Djokovic is going to be the final of the next Australian open!",
+            "author_name": "Andrea Cipriani",
+            "image_name": "djokovic.jpg",
+            "style": "card_light",
+            "link": {
+                "app": "newsfeed://news:3",
+                "web": "www.google.com"
+            }
+        },
+        {
+            "id": 4,
+            "category": "Sport",
+            "title": "Nadal-Djokovic is going to be the final of the next Australian open!",
+            "author_name": "Andrea Cipriani",
+            "image_name": "djokovic.jpg",
+            "style": "card_light",
+            "link": {
+                "app": "newsfeed://news:4",
+                "web": "www.google.com"
+            }
+        },
+        {
+            "id": 5,
+            "category": "Sport",
+            "title": "Nadal-Djokovic is going to be the final of the next Australian open!",
+            "author_name": "Andrea Cipriani",
+            "image_name": "djokovic.jpg",
+            "style": "card_light",
+            "link": {
+                "app": "newsfeed://news:5",
                 "web": "www.google.com"
             }
         }
