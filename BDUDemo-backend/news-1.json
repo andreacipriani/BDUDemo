@@ -1,0 +1,26 @@
+{
+    "news": [
+        {
+            "id": 1,
+            "title": "This is the title of a news",
+            "subtitle": "This is the subtitle",
+            "authorName": "Andrea",
+            "style": "card_light",
+            "link": {
+                "app": "newsfeed://news:1",
+                "web": "www.google.com"
+            }
+        },
+        {
+            "id": 2,
+            "title": "This is the title of the news",
+            "subtitle": "This is the subtitle",
+            "authorName": "Germano",
+            "style": "card_dark",
+            "link": {
+                "app": "newsfeed://news:2",
+                "web": "www.google.com"
+            }
+        }
+    ]
+}
