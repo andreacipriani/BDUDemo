@@ -12,6 +12,16 @@ struct NewsLink: Decodable {
 }
 
 enum NewsItemStyle: String, Decodable {
-    case cardLight = "card_light"
-    case cardDark = "card_dark"
+    case cardTopLight = "card_top_light"
+    case cardBottomLight = "card_bottom_light"
+    // case unknown?
+    
+    func cellIdentifier() -> String {
+        switch self {
+        case .cardTopLight:
+            return TopCardCollectionViewCell.identifier
+        case .cardBottomLight:
+            return BottomCardCollectionViewCell.identifier
+        }
+    }
 }

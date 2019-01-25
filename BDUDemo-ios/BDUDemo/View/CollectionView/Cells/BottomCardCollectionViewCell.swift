@@ -1,21 +1,22 @@
 import UIKit
 
-final class SingleCardCollectionViewCell: UICollectionViewCell {
+final class BottomCardCollectionViewCell: UICollectionViewCell, NewsCellStylable {
     
-    static let identifier = "SingleCardCollectionViewCell"
+    static let identifier = "BottomCardCollectionViewCell"
     
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         styleCell()
     }
     
-    func update(with viewModel: NewsViewModel) {
+    // MARK: - NewsCellStylable
+    
+    func style(with viewModel: NewsViewModel) {
         titleLabel.text = viewModel.title
         categoryLabel.text = viewModel.category
         imageView.image = viewModel.image
