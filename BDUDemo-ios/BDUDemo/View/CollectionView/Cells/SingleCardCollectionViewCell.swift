@@ -1,8 +1,8 @@
 import UIKit
 
-class CardCollectionViewCell: UICollectionViewCell {
+final class SingleCardCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "CardCollectionViewCell"
+    static let identifier = "SingleCardCollectionViewCell"
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
