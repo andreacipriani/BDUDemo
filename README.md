@@ -9,7 +9,6 @@
 	- Show deeplinks
 	- Show changing theme
 TODO:
-	- Implement backend that returns static data
 	- Implement simple collection view that shows the data
 	- Define Contract
 	- Implement Contract
