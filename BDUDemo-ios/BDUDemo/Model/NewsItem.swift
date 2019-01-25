@@ -2,7 +2,7 @@ import Foundation
 
 struct NewsItem: Decodable {
     let id: Int
-    let title, subtitle, authorName: String
+    let title, category, authorName, imageName: String
     let style: NewsItemStyle
     let link: NewsLink
 }

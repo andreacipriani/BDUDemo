@@ -28,10 +28,15 @@ final class NewsViewController: UIViewController, NewsPresenterOutput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupCollectionController()
         presenter.loadNews()
     }
     
+    func setupNavigationBar() {
+        title = "BDUI News"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     func setupCollectionController() {
         collectionController = NewsCollectionController(collectionView: collectionView)
     }
@@ -60,5 +65,4 @@ final class NewsViewController: UIViewController, NewsPresenterOutput {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
         self.present(alert, animated: true, completion: nil)
     }
-
 }

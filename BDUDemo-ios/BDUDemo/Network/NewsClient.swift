@@ -10,7 +10,9 @@ struct NewsClient {
                 return
             }
             do {
-                let news = try JSONDecoder().decode([NewsItem].self, from: data)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let news = try decoder.decode([NewsItem].self, from: data)
                 completion(.success(news))
             } catch {
                 let specialisedError = NewsFeedError.jsonParsingError(error)

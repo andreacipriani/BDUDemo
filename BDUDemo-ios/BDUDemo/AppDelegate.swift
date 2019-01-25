@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func showWindowWithFirstViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.rootViewController = NewsViewController(presenter: NewsPresenter())
+        let initialViewController = NewsViewController(presenter: NewsPresenter())
+        let navigationController = UINavigationController(rootViewController: initialViewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 }
