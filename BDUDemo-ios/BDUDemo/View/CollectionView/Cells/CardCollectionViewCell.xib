@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card" id="gTV-IL-0wX" customClass="CardCollectionViewCell" customModule="BDUDemo" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCollectionViewCell" id="gTV-IL-0wX" customClass="CardCollectionViewCell" customModule="BDUDemo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -44,7 +44,6 @@
             <size key="customSize" width="305" height="153"/>
             <connections>
                 <outlet property="subtitleLabel" destination="M6h-cb-qmu" id="6kB-vU-OR0"/>
-                <outlet property="title" destination="P9V-G3-ebj" id="Nmm-P8-qRk"/>
                 <outlet property="titleLabel" destination="P9V-G3-ebj" id="t0P-SC-4xi"/>
             </connections>
             <point key="canvasLocation" x="131" y="175"/>

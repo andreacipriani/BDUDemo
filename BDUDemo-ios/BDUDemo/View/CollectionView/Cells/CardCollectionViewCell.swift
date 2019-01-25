@@ -2,6 +2,8 @@ import UIKit
 
 class CardCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "CardCollectionViewCell"
+    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
 

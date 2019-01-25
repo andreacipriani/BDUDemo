@@ -5,16 +5,19 @@ protocol NewsCollectionControlling {
     func udpate(with viewModels: [NewsViewModel])
 }
 
-final class NewsCollectionController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, NewsCollectionControlling {
+final class NewsCollectionController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NewsCollectionControlling {
     
     private let collectionView: UICollectionView
-    
-    init(collectionView: UICollectionView) {
-        self.collectionView = collectionView
-    }
-    
     private(set) var newsViewModels: [NewsViewModel] = []
 
+    init(collectionView: UICollectionView) {
+        self.collectionView = collectionView
+        super.init()
+        collectionView.register(UINib(nibName: CardCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CardCollectionViewCell.identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return newsViewModels.count //TODO: filter unsupported
@@ -22,8 +25,7 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let newsViewModel = newsViewModels[indexPath.row]
-        let reuseIdentifier = "Card"
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CardCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as! CardCollectionViewCell
         cell.update(with: newsViewModel)
         return cell
     }

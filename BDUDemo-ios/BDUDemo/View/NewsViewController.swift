@@ -28,14 +28,8 @@ final class NewsViewController: UIViewController, NewsPresenterOutput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
         setupCollectionController()
         presenter.loadNews()
-    }
-    
-    private func setupCollectionView() {
-        collectionView.delegate = collectionController
-        collectionView.dataSource = collectionController
     }
     
     func setupCollectionController() {
