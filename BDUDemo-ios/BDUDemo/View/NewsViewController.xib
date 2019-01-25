@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController" customModule="BDUDemo" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="9JO-be-kCG" id="aQs-7f-p9c"/>
                 <outlet property="collectionView" destination="lRN-iM-UB4" id="vnW-7s-3Dg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,12 +32,17 @@
                     </collectionViewFlowLayout>
                     <cells/>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9JO-be-kCG">
+                    <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="lRN-iM-UB4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="BTq-8b-NKD"/>
+                <constraint firstItem="9JO-be-kCG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cy7-3j-Lje"/>
                 <constraint firstAttribute="bottom" secondItem="lRN-iM-UB4" secondAttribute="bottom" constant="-3" id="FNZ-i1-70g"/>
                 <constraint firstAttribute="trailing" secondItem="lRN-iM-UB4" secondAttribute="trailing" constant="-4" id="QsQ-je-efG"/>
+                <constraint firstItem="9JO-be-kCG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iJc-y2-373"/>
                 <constraint firstItem="lRN-iM-UB4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-5" id="mTp-qV-tDH"/>
             </constraints>
             <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>

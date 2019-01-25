@@ -14,7 +14,8 @@ final class NewsViewController: UIViewController, NewsPresenterOutput {
     // MARK: - Outlets
     
     @IBOutlet private weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     // MARK: - Public
     
     convenience init(presenter: NewsPresenting) {
@@ -44,14 +45,17 @@ final class NewsViewController: UIViewController, NewsPresenterOutput {
     // MARK: - NewsPresenterOutput
     
     func showLoading() {
-        
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
     
     func showError() {
+        activityIndicator.stopAnimating()
         showOKAlert(with: "Network error, please retry")
     }
 
     func show(news: [NewsViewModel]) {
+        activityIndicator.stopAnimating()
         collectionController.udpate(with: news)
     }
     
