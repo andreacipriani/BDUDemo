@@ -6,7 +6,7 @@
             "title": "Novak Djokovic to face his rival Rafael Nadal in the final!",
             "author_name": "Andrea Cipriani",
             "image_name": "djokovic.jpg",
-            "style": "card_bottom_light",
+            "style": "top_image_card",
             "link": {
                 "app": "newsfeed://news:1",
                 "web": "www.google.com"
@@ -18,7 +18,7 @@
             "title": "Tourist banned from Italy for eating pizza with pineapple",
             "author_name": "Andrea Cipriani",
             "image_name": "pizza.jpg",
-            "style": "card_bottom_light",
+            "style": "top_image_card",
             "link": {
                 "app": "newsfeed://news:2",
                 "web": "www.google.com"
@@ -26,23 +26,32 @@
         },
         {
             "id": 3,
-            "category": "Sport",
-            "title": "Nadal-Djokovic is going to be the final of the next Australian open!",
-            "author_name": "Andrea Cipriani",
-            "image_name": "djokovic.jpg",
-            "style": "card_top_light",
+            "category": "Finance",
+            "title": "Is Bitcoin going up again, or was it a bubble?",
+            "author_name": "The Bitcoin expert",
+            "image_name": "bitcoin.jpg",
+            "style": "bottom_image_card",
             "link": {
                 "app": "newsfeed://news:3",
                 "web": "www.google.com"
+            },
+            "ad": {
+                "title": "SoundCloud",
+                "image_name": "soundcloud.png",
+                "call_to_action" : "Download",
+                "link": {
+                    "app": "newsfeed://ad:4",
+                    "web": "www.soudncloud.com/download"
+                }
             }
         },
         {
             "id": 4,
-            "category": "Sport",
-            "title": "Nadal-Djokovic is going to be the final of the next Australian open!",
+            "category": "Technology",
+            "title": "The best app for listening to music!",
             "author_name": "Andrea Cipriani",
-            "image_name": "djokovic.jpg",
-            "style": "card_top_light",
+            "image_name": "soundcloud-big.jpg",
+            "style": "top_image_card",
             "link": {
                 "app": "newsfeed://news:4",
                 "web": "www.google.com"
@@ -54,10 +63,19 @@
             "title": "Nadal-Djokovic is going to be the final of the next Australian open!",
             "author_name": "Andrea Cipriani",
             "image_name": "djokovic.jpg",
-            "style": "card_top_light",
+            "style": "bottom_image_card",
             "link": {
                 "app": "newsfeed://news:5",
                 "web": "www.google.com"
+            },
+            "ad": {
+                "title": "SoundCloud",
+                "image_name": "soundcloud.png",
+                "call_to_action" : "Download",
+                "link": {
+                    "app": "newsfeed://ad:4",
+                    "web": "www.soudncloud.com/download"
+                }
             }
         }
     ]

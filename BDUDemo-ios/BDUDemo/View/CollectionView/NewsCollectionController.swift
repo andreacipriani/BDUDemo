@@ -26,7 +26,7 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let newsViewModel = newsViewModels[indexPath.row]
         let identifier = newsViewModel.style.cellIdentifier()
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! UICollectionViewCell & NewsCellStylable //TODO: handle unsupported
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! (UICollectionViewCell & NewsCellStylable) //TODO: handle unsupported
         cell.style(with: newsViewModel)
         return cell
     }
@@ -40,8 +40,8 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     }
     
     func registerCells() {
-        registerCell(withIdentifier: BottomCardCollectionViewCell.identifier)
-        registerCell(withIdentifier: TopCardCollectionViewCell.identifier)
+        registerCell(withIdentifier: BottomImageCardCollectionViewCell.identifier)
+        registerCell(withIdentifier: TopImageCardCollectionViewCell.identifier)
     }
     
     func registerCell(withIdentifier identifier: String) {

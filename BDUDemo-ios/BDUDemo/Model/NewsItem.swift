@@ -5,6 +5,12 @@ struct NewsItem: Decodable {
     let title, category, authorName, imageName: String
     let style: NewsItemStyle
     let link: NewsLink
+    let ad: NewsAd?
+}
+
+struct NewsAd: Decodable {
+    let title, callToAction, imageName: String
+    let link: NewsLink
 }
 
 struct NewsLink: Decodable {
@@ -12,16 +18,18 @@ struct NewsLink: Decodable {
 }
 
 enum NewsItemStyle: String, Decodable {
-    case cardTopLight = "card_top_light"
-    case cardBottomLight = "card_bottom_light"
-    // case unknown?
+    case topImageCard = "top_image_card"
+    case bottomImageCard = "bottom_image_card"
+    
+    // TODO: case unknown? default or discard?
+    // TODO: light/dark as theme parameter
     
     func cellIdentifier() -> String {
         switch self {
-        case .cardTopLight:
-            return TopCardCollectionViewCell.identifier
-        case .cardBottomLight:
-            return BottomCardCollectionViewCell.identifier
+        case .topImageCard:
+            return TopImageCardCollectionViewCell.identifier
+        case .bottomImageCard:
+            return BottomImageCardCollectionViewCell.identifier
         }
     }
 }

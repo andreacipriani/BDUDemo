@@ -7,6 +7,18 @@ struct NewsViewModel {
     let author: String
     let image: UIImage
     let style: NewsItemStyle
+    let ad: NewsAdViewModel?
+}
+
+struct NewsAdViewModel {
+    let title: String
+    let callToAction: String
+    let image: UIImage?
+
+    static func from(_ ad: NewsAd?) -> NewsAdViewModel? {
+        guard let ad = ad else { return nil }
+        return NewsAdViewModel(title: ad.title, callToAction: ad.callToAction, image: UIImage(named: ad.imageName) ?? nil)
+    }
 }
 
 extension NewsViewModel {
@@ -16,6 +28,7 @@ extension NewsViewModel {
                              category: newsItem.category.uppercased(),
                              author: newsItem.authorName,
                              image: image,
-                             style: newsItem.style)
+                             style: newsItem.style,
+                             ad: NewsAdViewModel.from(newsItem.ad))
     }
 }
