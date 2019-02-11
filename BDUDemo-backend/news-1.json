@@ -3,12 +3,12 @@
         {
             "id": 1,
             "category": "Sport",
-            "title": "Novak Djokovic to face his rival Rafael Nadal in the final!",
+            "title": "Novak Djokovic to face his rival Rafael Nadal",
             "author_name": "Andrea Cipriani",
             "image_name": "djokovic.jpg",
             "style": "top_image_card",
             "link": {
-                "app": "newsfeed://news:1",
+                "app": "newsfeed:news:1",
                 "web": "www.google.com"
             }
         },
@@ -20,7 +20,7 @@
             "image_name": "pizza.jpg",
             "style": "top_image_card",
             "link": {
-                "app": "newsfeed://news:2",
+                "app": "newsfeed:news:2",
                 "web": "www.google.com"
             }
         },
@@ -32,7 +32,7 @@
             "image_name": "bitcoin.jpg",
             "style": "bottom_image_card",
             "link": {
-                "app": "newsfeed://news:3",
+                "app": "newsfeed:news:3",
                 "web": "www.google.com"
             },
             "ad": {
@@ -40,7 +40,7 @@
                 "image_name": "soundcloud.png",
                 "call_to_action" : "Download",
                 "link": {
-                    "app": "newsfeed://ad:4",
+                    "app": "newsfeed:ad:4",
                     "web": "www.soudncloud.com/download"
                 }
             }
@@ -53,7 +53,7 @@
             "image_name": "soundcloud-big.jpg",
             "style": "top_image_card",
             "link": {
-                "app": "newsfeed://news:4",
+                "app": "newsfeed:news:4",
                 "web": "www.google.com"
             }
         },
@@ -73,7 +73,7 @@
                 "image_name": "soundcloud.png",
                 "call_to_action" : "Download",
                 "link": {
-                    "app": "newsfeed://ad:4",
+                    "app": "newsfeed:ad:4",
                     "web": "www.soudncloud.com/download"
                 }
             }

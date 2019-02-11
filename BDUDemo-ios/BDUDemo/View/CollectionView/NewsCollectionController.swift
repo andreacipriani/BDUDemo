@@ -9,7 +9,8 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     
     private let collectionView: UICollectionView
     private(set) var newsViewModels: [NewsViewModel] = []
-
+    weak var sourceViewController: UIViewController?
+    
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init()
@@ -31,6 +32,19 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let sourceViewController = sourceViewController else { return }
+        let newsViewModel = newsViewModels[indexPath.row]
+    
+        if let appLink = newsViewModel.link.app {
+            let newsDeeplink = NewsDeeplink(urlString: appLink)
+            NewsDeeplinkNavigator().navigate(to: newsDeeplink, from: sourceViewController)
+        }
+//        } else if let weblink = newsViewModel.link.web {
+//            WeblinkHandler().navigate(to: weblink)
+//        }
+
+    }
     // MARK: - Private
     
     func setupCollectionView() {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6811255B22121B0E009E616A /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811255922121B0E009E616A /* NewsDetailViewController.swift */; };
+		6811255C22121B0E009E616A /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6811255A22121B0E009E616A /* NewsDetailViewController.xib */; };
+		6811255F22121CF1009E616A /* DeeplinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811255E22121CF1009E616A /* DeeplinkNavigator.swift */; };
+		6811256122121D01009E616A /* WeblinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6811256022121D01009E616A /* WeblinkHandler.swift */; };
 		6864DB4D21DF966300A03066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6864DB4C21DF966300A03066 /* AppDelegate.swift */; };
 		6864DB5421DF966400A03066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6864DB5321DF966400A03066 /* Assets.xcassets */; };
 		6864DB5721DF966400A03066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6864DB5521DF966400A03066 /* LaunchScreen.storyboard */; };
@@ -45,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6811255922121B0E009E616A /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		6811255A22121B0E009E616A /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
+		6811255E22121CF1009E616A /* DeeplinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkNavigator.swift; sourceTree = "<group>"; };
+		6811256022121D01009E616A /* WeblinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeblinkHandler.swift; sourceTree = "<group>"; };
 		6864DB4921DF966300A03066 /* BDUDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDUDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6864DB4C21DF966300A03066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6864DB5321DF966400A03066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6811255D22121CE6009E616A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				6811255E22121CF1009E616A /* DeeplinkNavigator.swift */,
+				6811256022121D01009E616A /* WeblinkHandler.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		6864DB4021DF966300A03066 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +132,7 @@
 		6864DB4B21DF966300A03066 /* BDUDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6811255D22121CE6009E616A /* Navigation */,
 				68EF64BE21FBB7C2009E3662 /* Resources */,
 				6864DB7621DFBD6400A03066 /* View */,
 				68EF64B721FB6C0E009E3662 /* Presenter */,
@@ -160,6 +178,8 @@
 				68CFDB762204A326006071EF /* Extensions */,
 				68EF64B321FB6851009E3662 /* NewsViewController.swift */,
 				68EF64B421FB6851009E3662 /* NewsViewController.xib */,
+				6811255922121B0E009E616A /* NewsDetailViewController.swift */,
+				6811255A22121B0E009E616A /* NewsDetailViewController.xib */,
 				6864DB8021DFC3D000A03066 /* CollectionView */,
 				6864DB7B21DFBE9100A03066 /* ViewModel */,
 			);
@@ -322,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6811255C22121B0E009E616A /* NewsDetailViewController.xib in Resources */,
 				6864DB7A21DFBDD800A03066 /* BottomImageCardCollectionViewCell.xib in Resources */,
 				68EF64C321FBC41D009E3662 /* pizza.jpg in Resources */,
 				68CFDB7522049E86006071EF /* AdView.xib in Resources */,
@@ -356,9 +377,12 @@
 				68CFDB7322049E61006071EF /* AdView.swift in Sources */,
 				6864DB7521DFB21800A03066 /* NewsFeedError.swift in Sources */,
 				68EF64C621FBC7B6009E3662 /* TopImageCardCollectionViewCell.swift in Sources */,
+				6811256122121D01009E616A /* WeblinkHandler.swift in Sources */,
 				6864DB7321DFB1FA00A03066 /* Result.swift in Sources */,
 				6864DB6E21DFAD2100A03066 /* NewsItem.swift in Sources */,
 				6864DB7921DFBDD800A03066 /* BottomImageCardCollectionViewCell.swift in Sources */,
+				6811255B22121B0E009E616A /* NewsDetailViewController.swift in Sources */,
+				6811255F22121CF1009E616A /* DeeplinkNavigator.swift in Sources */,
 				68EF64B921FB6C1F009E3662 /* NewsPresenter.swift in Sources */,
 				68CFDB782204A331006071EF /* UIView+Constraints.swift in Sources */,
 				6864DB7121DFADB500A03066 /* NewsClient.swift in Sources */,

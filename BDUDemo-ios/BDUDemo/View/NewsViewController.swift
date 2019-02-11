@@ -37,8 +37,10 @@ final class NewsViewController: UIViewController, NewsPresenterOutput {
         title = "BDUI News"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
     func setupCollectionController() {
         collectionController = NewsCollectionController(collectionView: collectionView)
+        collectionController.sourceViewController = self
     }
     
     // MARK: - NewsPresenterOutput

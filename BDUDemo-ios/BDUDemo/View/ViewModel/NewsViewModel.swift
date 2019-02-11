@@ -8,6 +8,7 @@ struct NewsViewModel {
     let image: UIImage
     let style: NewsItemStyle
     let ad: NewsAdViewModel?
+    let link: NewsLink
 }
 
 struct NewsAdViewModel {
@@ -29,6 +30,7 @@ extension NewsViewModel {
                              author: newsItem.authorName,
                              image: image,
                              style: newsItem.style,
-                             ad: NewsAdViewModel.from(newsItem.ad))
+                             ad: NewsAdViewModel.from(newsItem.ad),
+                             link: newsItem.link)
     }
 }
