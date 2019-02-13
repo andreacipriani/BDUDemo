@@ -5,10 +5,7 @@
             "category": "Sport",
             "title": "Novak Djokovic to face his rival Rafael Nadal at the final of the Australian Open",
             "image_name": "djokovic.jpg",
-            "style": "top_image_card",
-            "link": {
-                "app": "newsfeed:news:1"
-            }
+            "style": "top_image_card"
         },
         {
             "id": 2,
@@ -16,10 +13,7 @@
             "title": "Tourist banned from Italy for eating pizza with pineapple",
             "author_name": "Andrea Cipriani",
             "image_name": "pizza.jpg",
-            "style": "top_image_card",
-            "link": {
-                "app": "newsfeed:news:2"
-            }
+            "style": "top_image_card"
         }
-    ]
+    ]   
 }
