@@ -25,13 +25,13 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     // MARK: - CollectionView Controlling
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newsViewModels.count //TODO: filter unsupported
+        return newsViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let newsViewModel = newsViewModels[indexPath.row]
         let identifier = newsViewModel.style.cellIdentifier()
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? (UICollectionViewCell & NewsCellConfigurable) ?? collectionView.dequeueReusableCell(withReuseIdentifier: fallbackReuseIdentifier, for: indexPath) as! (UICollectionViewCell & NewsCellConfigurable)
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! (UICollectionViewCell & NewsCellConfigurable)
         cell.style(with: newsViewModel)
         cell.adActionDelegate = self
         return cell
