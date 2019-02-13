@@ -1,5 +1,7 @@
 import Foundation
 
+//TODO: things should be optional and not shown sometimes
+
 struct NewsItem: Decodable {
     let id: Int
     let title, category, authorName, imageName: String

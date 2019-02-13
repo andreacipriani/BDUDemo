@@ -1,7 +1,6 @@
 import UIKit
 
-final class NewsDetailViewController: UIViewController {
-    
+final class NewsDetailViewController: UIViewController {    
     private (set) var newsId: String!
 
     convenience init(newsId: String) {

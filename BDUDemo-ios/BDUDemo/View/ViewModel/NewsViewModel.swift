@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 struct NewsViewModel {
+    //TODO: make everything optional
     let title: String
     let category: String
     let author: String

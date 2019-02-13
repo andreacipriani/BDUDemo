@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     // MARK: - Public
     

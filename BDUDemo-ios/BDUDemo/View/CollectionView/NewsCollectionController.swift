@@ -8,11 +8,15 @@ protocol NewsCollectionControlling {
 final class NewsCollectionController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, NewsCollectionControlling {
     
     private let collectionView: UICollectionView
+    private let navigator: Navigator
+    
     private(set) var newsViewModels: [NewsViewModel] = []
     weak var sourceViewController: UIViewController?
     
-    init(collectionView: UICollectionView) {
+    init(collectionView: UICollectionView,
+         navigator: Navigator = Navigator()) {
         self.collectionView = collectionView
+        self.navigator = navigator
         super.init()
         setupCollectionView()
         registerCells()
@@ -33,18 +37,12 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let sourceViewController = sourceViewController else { return }
-        let newsViewModel = newsViewModels[indexPath.row]
-    
-        if let appLink = newsViewModel.link.app {
-            let newsDeeplink = NewsDeeplink(urlString: appLink)
-            NewsDeeplinkNavigator().navigate(to: newsDeeplink, from: sourceViewController)
-        }
-//        } else if let weblink = newsViewModel.link.web {
-//            WeblinkHandler().navigate(to: weblink)
-//        }
-
+        guard let sourceViewController = sourceViewController,
+            let newsViewModel = newsViewModels[safe: indexPath.row] else { return }
+        let navigationLink = NavigationLink.make(from: newsViewModel)
+        navigator.navigate(to: navigationLink, fallbackUrlString: newsViewModel.link.web, from: sourceViewController)
     }
+    
     // MARK: - Private
     
     func setupCollectionView() {
