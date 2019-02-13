@@ -42,11 +42,8 @@
                         <color key="textColor" red="0.4342076956" green="0.4342076956" blue="0.4342076956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nadal - Djokovic is the final of the next Australian open!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKG-g1-LHC" userLabel="TitleLabel">
-                        <rect key="frame" x="30" y="285" width="280.5" height="55"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="55" id="dT3-iR-BYH"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tourist banned from Italy because of eating Pizza with pineapple" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKG-g1-LHC" userLabel="TitleLabel">
+                        <rect key="frame" x="30" y="285" width="290" height="55"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -67,6 +64,7 @@
                 <constraint firstItem="s7B-OZ-sUW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JJh-Gt-4VZ"/>
                 <constraint firstItem="wFG-E8-OYC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Kl7-SO-jDE"/>
                 <constraint firstItem="PBp-nq-Z5x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="Oxg-5C-Agw"/>
+                <constraint firstAttribute="bottom" secondItem="y9O-mM-YMb" secondAttribute="bottom" constant="11" id="RQ3-Sy-tMZ"/>
                 <constraint firstItem="y9O-mM-YMb" firstAttribute="leading" secondItem="nKG-g1-LHC" secondAttribute="leading" id="Xem-Yy-M7z"/>
                 <constraint firstItem="nKG-g1-LHC" firstAttribute="top" secondItem="PBp-nq-Z5x" secondAttribute="bottom" id="ajX-Ji-USL"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y9O-mM-YMb" secondAttribute="trailing" constant="30" id="dOB-T2-Yv6"/>
@@ -81,6 +79,7 @@
             <connections>
                 <outlet property="adContainerView" destination="wFG-E8-OYC" id="vpO-mx-RSP"/>
                 <outlet property="authorLabel" destination="y9O-mM-YMb" id="9mj-6Y-QIQ"/>
+                <outlet property="authorLabelHeightConstraint" destination="LqV-dl-6j6" id="LBl-pt-D2u"/>
                 <outlet property="categoryLabel" destination="PBp-nq-Z5x" id="SlK-HK-3fX"/>
                 <outlet property="imageView" destination="s7B-OZ-sUW" id="b3E-x0-JGE"/>
                 <outlet property="titleLabel" destination="nKG-g1-LHC" id="qy4-59-hX5"/>

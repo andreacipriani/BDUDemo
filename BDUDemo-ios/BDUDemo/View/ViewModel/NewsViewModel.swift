@@ -2,10 +2,9 @@ import Foundation
 import UIKit
 
 struct NewsViewModel {
-    //TODO: make everything optional
     let title: String
     let category: String
-    let author: String
+    let author: String?
     let image: UIImage
     let style: NewsItemStyle
     let ad: NewsAdViewModel?
@@ -19,18 +18,36 @@ struct NewsAdViewModel {
 
     static func from(_ ad: NewsAd?) -> NewsAdViewModel? {
         guard let ad = ad else { return nil }
-        return NewsAdViewModel(title: ad.title, callToAction: ad.callToAction, image: UIImage(named: ad.imageName) ?? nil)
+        return NewsAdViewModel(title: ad.title,
+                               callToAction: ad.callToAction,
+                               image: UIImage(named: ad.imageName) ?? nil)
+    }
+}
+
+enum NewsItemStyle: String, Decodable {
+    case topImageCard = "top_image_card"
+    case bottomImageCard = "bottom_image_card"
+    
+    func cellIdentifier() -> String {
+        switch self {
+        case .topImageCard:
+            return TopImageCardCollectionViewCell.identifier
+        case .bottomImageCard:
+            return BottomImageCardCollectionViewCell.identifier
+        }
     }
 }
 
 extension NewsViewModel {
     static func from(_ newsItem: NewsItem) -> NewsViewModel {
         let image = UIImage(named: newsItem.imageName) ?? UIImage()
+        let defaultStyle = NewsItemStyle.topImageCard
+        let style = NewsItemStyle(rawValue: newsItem.style) ?? defaultStyle
         return NewsViewModel(title: newsItem.title,
                              category: newsItem.category.uppercased(),
                              author: newsItem.authorName,
                              image: image,
-                             style: newsItem.style,
+                             style: style,
                              ad: NewsAdViewModel.from(newsItem.ad),
                              link: newsItem.link)
     }

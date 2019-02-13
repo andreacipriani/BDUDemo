@@ -247,8 +247,8 @@
 		6864DB8121DFC3DA00A03066 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				68CFDB7122049E61006071EF /* Views */,
 				68EF64C821FBCAAC009E3662 /* NewsCellStylable.swift */,
+				68CFDB7122049E61006071EF /* Views */,
 				6864DB7721DFBDD800A03066 /* BottomImageCardCollectionViewCell.swift */,
 				6864DB7821DFBDD800A03066 /* BottomImageCardCollectionViewCell.xib */,
 				68EF64C421FBC7B6009E3662 /* TopImageCardCollectionViewCell.swift */,
