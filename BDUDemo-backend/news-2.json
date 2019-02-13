@@ -64,7 +64,7 @@
             "image_name": "djokovic.jpg",
             "style": "bottom_image_card",
             "link": {
-                "app": "newsfeed://news:5",
+                "app": "newsfeed:news:5",
                 "web": "www.google.com"
             },
             "ad": {

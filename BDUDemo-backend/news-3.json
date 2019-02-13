@@ -1,0 +1,26 @@
+{
+    "news": [
+        {
+            "id": 2,
+            "category": "Food",
+            "title": "Tourist banned from Italy for eating pizza with pineapple",
+            "author_name": "Andrea Cipriani",
+            "image_name": "pizza.jpg",
+            "style": "top_image_card",
+            "link": {
+                "app": "newsfeed:news:2"
+            }
+        },
+        {
+            "id": 1,
+            "category": "Sport",
+            "title": "Novak Djokovic to face his rival Rafael Nadal",
+            "author_name": "Andrea Cipriani",
+            "image_name": "djokovic.jpg",
+            "style": "top_image_card",
+            "link": {
+                "app": "newsfeed:news:1"
+            }
+        }
+   ]
+}

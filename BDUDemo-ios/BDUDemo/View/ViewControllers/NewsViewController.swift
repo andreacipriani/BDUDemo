@@ -34,7 +34,7 @@ final class NewsViewController: UIViewController, NewsPresenterOutput {
     }
     
     func setupNavigationBar() {
-        title = "BDUI News"
+        title = "Backend driven UI"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     

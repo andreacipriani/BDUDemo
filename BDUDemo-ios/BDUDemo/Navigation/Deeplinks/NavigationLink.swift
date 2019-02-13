@@ -8,8 +8,8 @@ enum NavigationPage: String, CaseIterable {
 struct NavigationLink {
     private let urlString: String
     
-    static func make(from newsViewModel: NewsViewModel) -> NavigationLink? {
-        guard let urlString = newsViewModel.link.app else { return nil }
+    static func make(from link: NewsLink) -> NavigationLink? {
+        guard let urlString = link.app else { return nil }
         return NavigationLink(urlString: urlString)
     }
     

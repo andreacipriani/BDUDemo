@@ -1,11 +1,9 @@
 import Foundation
 
-//TODO: things should be optional and not shown sometimes
-
 struct NewsItem: Decodable {
     let id: Int
     let title, category, imageName: String
-    let authorName: String?
+    let authorName: String? // We can decide to hide the author of a news and get more space for the title
     let style: String
     let link: NewsLink
     let ad: NewsAd?

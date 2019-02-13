@@ -56,27 +56,6 @@
                 "app": "newsfeed:news:4",
                 "web": "www.google.com"
             }
-        },
-        {
-            "id": 5,
-            "category": "Sport",
-            "title": "Nadal-Djokovic is going to be the final of the next Australian open!",
-            "author_name": "Andrea Cipriani",
-            "image_name": "djokovic.jpg",
-            "style": "bottom_image_card",
-            "link": {
-                "app": "newsfeed://news:5",
-                "web": "www.google.com"
-            },
-            "ad": {
-                "title": "SoundCloud",
-                "image_name": "soundcloud.png",
-                "call_to_action" : "Download",
-                "link": {
-                    "app": "newsfeed:ad:4",
-                    "web": "www.soudncloud.com/download"
-                }
-            }
         }
     ]
 }

@@ -1,7 +1,11 @@
 import UIKit
 
-final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellStylable {
+protocol AdViewActionLinkDelegate: class {
+    func didPressAdButton(link: NewsLink)
+}
 
+final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellConfigurable {
+    
     static let identifier = "TopImageCardCollectionViewCell"
 
     @IBOutlet private weak var imageView: UIImageView!
@@ -10,9 +14,13 @@ final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellStylab
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var adContainerView: UIView!
     @IBOutlet weak var authorLabelHeightConstraint: NSLayoutConstraint!
+
+    weak var adActionDelegate: AdViewActionLinkDelegate?
+    
     private let authorLabelDefaultHeight: CGFloat = 25.0
     
     private var adView: AdView!
+    private var newsViewModel: NewsViewModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +35,8 @@ final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellStylab
     // MARK: - NewsCellStylable
     
     func style(with viewModel: NewsViewModel) {
+        newsViewModel = viewModel
+        
         // Data
         categoryLabel.text = viewModel.category
         titleLabel.text = viewModel.title
@@ -36,7 +46,6 @@ final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellStylab
         // Style
         adContainerView.isHidden = viewModel.ad == nil
         adView.style(with: viewModel.ad)
-        
         let shouldShowAuthor = viewModel.author != nil
         authorLabel.isHidden = !shouldShowAuthor
         adjustLayoutForAuthorLabel(showing: shouldShowAuthor)
@@ -62,9 +71,17 @@ final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellStylab
         adView = AdView.makeFromNib()
         adContainerView.addSubview(adView)
         adView.constrainToSuperView()
+        adView.actionDelegate = self
     }
     
     private func adjustLayoutForAuthorLabel(showing: Bool) {
         authorLabelHeightConstraint.constant = showing ? authorLabelDefaultHeight : 0
+    }
+}
+
+extension TopImageCardCollectionViewCell: AdViewActionDelegate {
+    func didPressAdButton() {
+        guard let newsViewModel = newsViewModel, let link = newsViewModel.ad?.link else { return }
+        adActionDelegate?.didPressAdButton(link: link)
     }
 }

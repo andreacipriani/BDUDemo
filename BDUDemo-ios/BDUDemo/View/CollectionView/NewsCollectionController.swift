@@ -9,7 +9,7 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     
     private let collectionView: UICollectionView
     private let navigator: Navigator
-    
+    private let fallbackReuseIdentifier = ""
     private(set) var newsViewModels: [NewsViewModel] = []
     weak var sourceViewController: UIViewController?
     
@@ -31,19 +31,24 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let newsViewModel = newsViewModels[indexPath.row]
         let identifier = newsViewModel.style.cellIdentifier()
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! (UICollectionViewCell & NewsCellStylable) //TODO: handle unsupported
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? (UICollectionViewCell & NewsCellConfigurable) ?? collectionView.dequeueReusableCell(withReuseIdentifier: fallbackReuseIdentifier, for: indexPath) as! (UICollectionViewCell & NewsCellConfigurable)
         cell.style(with: newsViewModel)
+        cell.adActionDelegate = self
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let sourceViewController = sourceViewController,
-            let newsViewModel = newsViewModels[safe: indexPath.row] else { return }
-        let navigationLink = NavigationLink.make(from: newsViewModel)
-        navigator.navigate(to: navigationLink, fallbackUrlString: newsViewModel.link.web, from: sourceViewController)
+        guard let newsViewModel = newsViewModels[safe: indexPath.row] else { return }
+        navigateTo(link: newsViewModel.link)
     }
     
     // MARK: - Private
+    
+    func navigateTo(link: NewsLink) {
+        guard let sourceViewController = sourceViewController else { return }
+        let navigationLink = NavigationLink.make(from: link)
+        navigator.navigate(to: navigationLink, fallbackUrlString: link.web, from: sourceViewController)
+    }
     
     func setupCollectionView() {
         collectionView.delegate = self
@@ -65,5 +70,11 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     func udpate(with viewModels: [NewsViewModel]) {
         self.newsViewModels = viewModels
         collectionView.reloadData()
+    }
+}
+
+extension NewsCollectionController: AdViewActionLinkDelegate {
+    func didPressAdButton(link: NewsLink) {
+        navigateTo(link: link)
     }
 }
