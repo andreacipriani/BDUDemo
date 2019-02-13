@@ -5,14 +5,14 @@ struct NewsItem: Decodable {
     let title: String
     let category: String
     let imageName: String?
-    let authorName: String? // We can decide to hide the author of a news and get more space for the title
+    let authorName: String? // We can decide to hide the author in the cards and get more space for the title
     
     //Style
-    let style: String
+    let style: String // top, bottom, mini. Default is top
     
     //Navigation
-    let link: NewsLink?
-    let ad: NewsAd?
+    let link: NewsLink? // Goes to internal view
+    let ad: NewsAd? // Goes to web view
 }
 
 struct NewsAd: Decodable {
