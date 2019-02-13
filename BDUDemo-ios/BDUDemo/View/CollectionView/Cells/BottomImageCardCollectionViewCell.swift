@@ -3,6 +3,7 @@ import UIKit
 final class BottomImageCardCollectionViewCell: UICollectionViewCell, NewsCellConfigurable {
     
     static let identifier = "BottomImageCardCollectionViewCell"
+    static let desiredHeight: CGFloat = 380.0
     
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var categoryLabel: UILabel!

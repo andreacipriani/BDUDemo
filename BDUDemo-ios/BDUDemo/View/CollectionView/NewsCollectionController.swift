@@ -38,13 +38,13 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let newsViewModel = newsViewModels[safe: indexPath.row] else { return }
-        navigateTo(link: newsViewModel.link)
+        guard let newsViewModel = newsViewModels[safe: indexPath.row], let link = newsViewModel.link else { return }
+        navigate(to: link)
     }
     
     // MARK: - Private
     
-    func navigateTo(link: NewsLink) {
+    func navigate(to link: NewsLink) {
         guard let sourceViewController = sourceViewController else { return }
         let navigationLink = NavigationLink.make(from: link)
         navigator.navigate(to: navigationLink, fallbackUrlString: link.web, from: sourceViewController)
@@ -59,6 +59,7 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     func registerCells() {
         registerCell(withIdentifier: BottomImageCardCollectionViewCell.identifier)
         registerCell(withIdentifier: TopImageCardCollectionViewCell.identifier)
+        registerCell(withIdentifier: MiniCardCollectionViewCell.identifier)
     }
     
     func registerCell(withIdentifier identifier: String) {
@@ -73,8 +74,15 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     }
 }
 
+extension NewsCollectionController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let newsViewModel = newsViewModels[indexPath.row]
+        return CGSize(width: collectionView.frame.size.width, height: newsViewModel.desiredHeight)
+    }
+}
+
 extension NewsCollectionController: AdViewActionLinkDelegate {
     func didPressAdButton(link: NewsLink) {
-        navigateTo(link: link)
+        navigate(to: link)
     }
 }

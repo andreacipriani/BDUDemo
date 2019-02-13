@@ -11,7 +11,7 @@ final class AdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let newsId = newsId {
-            title = "News \(newsId)"
+            title = "Ad from news \(newsId)"
         }
     }
 }

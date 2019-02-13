@@ -7,7 +7,8 @@ protocol AdViewActionLinkDelegate: class {
 final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellConfigurable {
     
     static let identifier = "TopImageCardCollectionViewCell"
-
+    static let desiredHeight: CGFloat = 380.0
+    
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!

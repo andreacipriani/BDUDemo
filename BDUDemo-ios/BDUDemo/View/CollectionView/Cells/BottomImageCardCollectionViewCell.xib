@@ -40,8 +40,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="djokovic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sIi-0U-emW">
-                                <rect key="frame" x="20" y="105" width="310" height="275"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="djokovic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sIi-0U-emW">
+                                <rect key="frame" x="0.0" y="105" width="350" height="275"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="275" id="IEK-yt-Vmc"/>
                                 </constraints>
@@ -57,9 +57,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sIi-0U-emW" secondAttribute="trailing" constant="20" id="0B6-vd-muR"/>
+                            <constraint firstAttribute="trailing" secondItem="sIi-0U-emW" secondAttribute="trailing" id="0B6-vd-muR"/>
                             <constraint firstAttribute="trailing" secondItem="Usr-yg-YRs" secondAttribute="trailing" id="FS9-Vh-b6h"/>
-                            <constraint firstItem="sIi-0U-emW" firstAttribute="leading" secondItem="dVh-Vl-Krj" secondAttribute="leading" constant="20" id="JCh-Ri-v36"/>
+                            <constraint firstItem="sIi-0U-emW" firstAttribute="leading" secondItem="dVh-Vl-Krj" secondAttribute="leading" id="JCh-Ri-v36"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P9V-G3-ebj" secondAttribute="trailing" constant="10" id="Ljd-rx-OY4"/>
                             <constraint firstItem="P9V-G3-ebj" firstAttribute="top" secondItem="dVh-Vl-Krj" secondAttribute="top" constant="10" id="Rzf-tJ-MCJ"/>
                             <constraint firstAttribute="bottom" secondItem="sIi-0U-emW" secondAttribute="bottom" id="VNN-2D-hq9"/>

@@ -8,7 +8,11 @@ struct NewsViewModel {
     let image: UIImage
     let style: NewsItemStyle
     let ad: NewsAdViewModel?
-    let link: NewsLink
+    let link: NewsLink?
+    
+    var desiredHeight: CGFloat {
+        return style.desiredHeight
+    }
 }
 
 struct NewsAdViewModel {
@@ -29,6 +33,7 @@ struct NewsAdViewModel {
 enum NewsItemStyle: String, Decodable {
     case topImageCard = "top_image_card"
     case bottomImageCard = "bottom_image_card"
+    case mini = "mini"
     
     func cellIdentifier() -> String {
         switch self {
@@ -36,13 +41,26 @@ enum NewsItemStyle: String, Decodable {
             return TopImageCardCollectionViewCell.identifier
         case .bottomImageCard:
             return BottomImageCardCollectionViewCell.identifier
+        case .mini:
+            return MiniCardCollectionViewCell.identifier
+        }
+    }
+    
+    var desiredHeight: CGFloat {
+        switch self {
+        case .topImageCard:
+            return TopImageCardCollectionViewCell.desiredHeight
+        case .bottomImageCard:
+            return BottomImageCardCollectionViewCell.desiredHeight
+        case .mini:
+            return MiniCardCollectionViewCell.desiredHeight
         }
     }
 }
 
 extension NewsViewModel {
     static func from(_ newsItem: NewsItem) -> NewsViewModel {
-        let image = UIImage(named: newsItem.imageName) ?? UIImage()
+        let image = UIImage(named: newsItem.imageName ?? "") ?? UIImage()
         let defaultStyle = NewsItemStyle.topImageCard
         let style = NewsItemStyle(rawValue: newsItem.style) ?? defaultStyle
         return NewsViewModel(title: newsItem.title,
