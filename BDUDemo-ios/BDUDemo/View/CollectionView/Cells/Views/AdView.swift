@@ -23,7 +23,7 @@ final class AdView: UIView {
     
     // MARK: - Public
     
-    public func style(with viewModel: NewsAdViewModel?) {
+    public func style(with viewModel: NewsAdCellConfiguration?) {
         isHidden = viewModel == nil
         guard let viewModel = viewModel else { return }
         adTitleLabel.text = viewModel.title

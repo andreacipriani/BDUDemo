@@ -16,7 +16,7 @@ final class MiniCardCollectionViewCell: UICollectionViewCell, NewsCellConfigurab
     
     // MARK: - NewsCellStylable
     
-    func style(with viewModel: NewsViewModel) {
+    func style(with viewModel: NewsCellConfiguration) {
         titleLabel.text = viewModel.title
         categoryLabel.text = viewModel.category
     }

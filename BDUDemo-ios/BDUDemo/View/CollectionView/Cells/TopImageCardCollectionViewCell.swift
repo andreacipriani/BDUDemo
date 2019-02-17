@@ -21,7 +21,7 @@ final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellConfig
     private let authorLabelDefaultHeight: CGFloat = 25.0
     
     private var adView: AdView!
-    private var newsViewModel: NewsViewModel?
+    private var newsViewModel: NewsCellConfiguration?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +35,7 @@ final class TopImageCardCollectionViewCell: UICollectionViewCell, NewsCellConfig
     
     // MARK: - NewsCellStylable
     
-    func style(with viewModel: NewsViewModel) {
+    func style(with viewModel: NewsCellConfiguration) {
         newsViewModel = viewModel
         
         // Data

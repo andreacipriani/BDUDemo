@@ -11,7 +11,7 @@ final class BottomImageCardCollectionViewCell: UICollectionViewCell, NewsCellCon
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var adContainerView: UIView!
     private var adView: AdView!
-    private var newsViewModel: NewsViewModel?
+    private var newsViewModel: NewsCellConfiguration?
     weak var adActionDelegate: AdViewActionLinkDelegate?
     
     override func awakeFromNib() {
@@ -21,7 +21,7 @@ final class BottomImageCardCollectionViewCell: UICollectionViewCell, NewsCellCon
     
     // MARK: - NewsCellStylable
     
-    func style(with viewModel: NewsViewModel) {
+    func style(with viewModel: NewsCellConfiguration) {
         newsViewModel = viewModel
 
         titleLabel.text = viewModel.title

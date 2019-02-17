@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 protocol NewsCollectionControlling {
-    func udpate(with viewModels: [NewsViewModel])
+    func udpate(with viewModels: [NewsCellConfiguration])
 }
 
 final class NewsCollectionController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, NewsCollectionControlling {
@@ -10,7 +10,7 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     private let collectionView: UICollectionView
     private let navigator: Navigator
     private let fallbackReuseIdentifier = ""
-    private(set) var newsViewModels: [NewsViewModel] = []
+    private(set) var newsViewModels: [NewsCellConfiguration] = []
     weak var sourceViewController: UIViewController?
     
     init(collectionView: UICollectionView,
@@ -68,7 +68,7 @@ final class NewsCollectionController: NSObject, UICollectionViewDelegate, UIColl
     
     // MARK: - NewsCollectionControlling
     
-    func udpate(with viewModels: [NewsViewModel]) {
+    func udpate(with viewModels: [NewsCellConfiguration]) {
         self.newsViewModels = viewModels
         collectionView.reloadData()
     }

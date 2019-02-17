@@ -3,7 +3,7 @@ import UIKit
 protocol NewsPresenterOutput: class {
     func showLoading()
     func showError()
-    func show(news: [NewsViewModel])
+    func show(news: [NewsCellConfiguration])
 }
 
 final class NewsViewController: UIViewController, NewsPresenterOutput {
@@ -55,7 +55,7 @@ final class NewsViewController: UIViewController, NewsPresenterOutput {
         showOKAlert(with: "Network error, please retry")
     }
 
-    func show(news: [NewsViewModel]) {
+    func show(news: [NewsCellConfiguration]) {
         activityIndicator.stopAnimating()
         collectionController.udpate(with: news)
     }
