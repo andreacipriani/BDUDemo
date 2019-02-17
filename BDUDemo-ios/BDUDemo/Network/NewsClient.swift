@@ -3,7 +3,6 @@ import Foundation
 typealias URLSessionResponse = (data: Data?, forUrlResponse: URLResponse?, error: Error?)
 
 final class NewsClient {
-    // private let url = URL(string: "https://lovely-catfish-82.localtunnel.me/news")!
     private let url = URL(string: "http://localhost:3000/news")!
     
     func fetchNews(completion: @escaping (Result<[NewsItem], NewsFeedError>) -> Void) {
