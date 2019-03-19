@@ -1,3 +1,6 @@
+// Added an advert
+// It loads in a web view, see WeblinkNavigator
+
 {
     "news": [
         {

@@ -1,3 +1,5 @@
+// Check the contract: NewsItem 
+// Check cell configuration: NewsCellConfiguration
 {
     "news": [
         {

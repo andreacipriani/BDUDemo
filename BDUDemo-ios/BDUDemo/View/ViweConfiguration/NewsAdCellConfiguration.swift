@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct NewsAdCellConfiguration {
     let title: String

@@ -7,17 +7,7 @@ protocol NewsCaching {
 }
 
 struct NewsCache: NewsCaching {
-  
     func newsText(for id: String) -> String {
-        
+        return "TODO"
     }
 }
-
-TODO:
-
-- news details
-- ad details with view
-- another cell from the beginning
-- another theme
-- unit tests
-- ui tests 

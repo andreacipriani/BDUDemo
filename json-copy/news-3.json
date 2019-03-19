@@ -1,3 +1,9 @@
+// changed style from top to bottom
+// changed the order, pizza on top, djoko down
+// links
+
+// See NewsItemStyle
+// DeeplinkNavigator
 {
     "news": [
         {
